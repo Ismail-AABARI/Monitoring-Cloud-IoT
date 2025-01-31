@@ -14,7 +14,7 @@ Monitoring Cloud IoT est une application basée sur une architecture microservic
 ![Docker Containers](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/Containers%20de%20docker.png)
 
 ## 📜 Test Via Curl
-![ Test Via Curl](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/pods.png)
+![ Test Via Curl](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/Les%20Tests%20fonctionnent.png)
 
 
 ## 🚀 **Architecture du projet**
