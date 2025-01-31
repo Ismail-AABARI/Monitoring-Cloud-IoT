@@ -1,0 +1,66 @@
+version: "3"
+
+services:
+  signing:
+    build:
+      context: ./signing
+    ports:
+      - "5003:5003"
+    environment:
+      - POSTGRES_URI=postgresql://admin:1234@postgres/signing_db
+      - SIGNING_WORKERS=4
+    depends_on:
+      - postgres  # Supprime la condition
+
+  device-management:
+    build:
+      context: ./device-management
+    ports:
+      - "5001:5001"
+    environment:
+      - POSTGRES_URI=postgresql://admin:1234@postgres/device_db
+    depends_on:
+      - postgres  # Supprime la condition
+
+  monitoring:
+    build:
+      context: ./monitoring
+    ports:
+      - "5002:5002"
+    depends_on:
+      - rabbitmq  # Supprime la condition
+      - mongodb   # Supprime la condition
+
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      - device-management
+      - signing
+      - monitoring
+
+volumes:
+  postgres_data:

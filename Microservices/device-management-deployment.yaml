@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: device-management
+  name: device-management
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: device-management
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: device-management
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_URI
+          value: postgresql://admin:1234@postgres.default.svc.cluster.local/device_db
+        image: microservices-device-management
+        imagePullPolicy: Never
+        name: device-management
+        ports:
+        - containerPort: 5001
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
