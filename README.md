@@ -7,6 +7,9 @@
 ## 📝 Description
 Monitoring Cloud IoT est une application basée sur une architecture microservices permettant de gérer l'authentification des utilisateurs, l'administration des dispositifs IoT et la surveillance des données transmises par ces derniers. L'objectif est de fournir une plateforme robuste et scalable pour le suivi en temps réel des appareils connectés.
 
+## 🎥 Regarder la vidéo de démonstration
+![Regarder la vidéo de démonstration](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/video%20Demo.mp4)
+
 ## 🔗 Microk8s Pods Up 
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/pods.png)
 
