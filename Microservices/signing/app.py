@@ -1,14 +1,29 @@
-print("Importing Flask...")
 from flask import Flask
-print("Importing controllers...")
+from flask_cors import CORS
 from controllers.user_controller import user_bp
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})  # ✅ Active CORS pour toutes les routes
+
 app.register_blueprint(user_bp, url_prefix="/auth")
 
 if __name__ == "__main__":
     print("Starting Signing Microservice on port 5003...")
     app.run(host="0.0.0.0", port=5003, debug=True)
+
+
+
+# print("Importing Flask...")
+# from flask import Flask
+# print("Importing controllers...")
+# from controllers.user_controller import user_bp
+
+# app = Flask(__name__)
+# app.register_blueprint(user_bp, url_prefix="/auth")
+
+# if __name__ == "__main__":
+#     print("Starting Signing Microservice on port 5003...")
+#     app.run(host="0.0.0.0", port=5003, debug=True)
 
 
 

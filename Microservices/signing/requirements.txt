@@ -3,3 +3,4 @@ flask-jwt-extended
 psycopg2-binary
 bcrypt
 sqlalchemy
+flask-cors
