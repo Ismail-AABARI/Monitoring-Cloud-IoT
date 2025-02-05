@@ -25,7 +25,7 @@ Monitoring Cloud IoT est une application basée sur une architecture microservic
 ## 🔗 Microk8s Pods Up 
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/pods.png)
 
-## 📂 Base de données Postgresql (BB signing et BD devices)
+## 📂 Base de données Postgresql (BD signing et BD devices)
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/PosgreSql%20signing%20db.jpg)
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/device%20db.jpg)
 
