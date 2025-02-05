@@ -16,7 +16,7 @@ Monitoring Cloud IoT est une application basée sur une architecture microservic
 ## 📜 Prometheus 
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/Promotheus%20.jpg)
 
-## 🌤️ Meteo data monitoring 
+## 🌤️ Meteo data monitoring en utilisant le Machine Learning
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/Meteo%20Monitoring%20Data%20db%20using%20ML.jpg)
 
 ## 📊 Device Page 
