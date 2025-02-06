@@ -43,9 +43,6 @@ Monitoring Cloud IoT est une application basée sur une architecture microservic
 ## 📝 Pods microk8s default 
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/pods%20default.jpg)
 
-## 📜 Service microk8s 
-![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/service%20pods.jpg)
-
 ## 🔗 Pods Observability 
 ![Microk8s Pods](https://github.com/Ismail-AABARI/Monitoring-Cloud-IoT/blob/main/pods%20observability.jpg)
 
