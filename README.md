@@ -95,23 +95,100 @@ L'architecture est orchestrée à l'aide de **Kubernetes** et la communication e
 
 ## 📂 **Structure du projet**
 ```
-monitoring-cloud-iot/
-│── microservices/
-│   ├── signing/
-│   │   ├── dal/
-│   │   ├── business/
-│   │   ├── models/
-│   │   ├── controllers/
-│   │   ├── config/
-│   │   ├── tests/
-│   │   ├── app.py
-│   ├── device-management/
-│   ├── monitoring/
-│── iot-devices/ (simulation de données IoT)
-│── end-devices/ (gestion des appareils finaux)
-│── docker/
-│── k8s/
-│── README.md
+Monitoring-Cloud-IoT/
+│── Microservices/
+│   │── device-management/
+│   │   │── business/
+│   │   │   ├── device_service.py
+│   │   │── config/
+│   │   │── controllers/
+│   │   │   ├── device_controller.py
+│   │   │── dal/
+│   │   │   ├── device_dal.py
+│   │   │── models/
+│   │   │── Tests/
+│   │   │── app.py
+│   │   │── Dockerfile
+│   │   │── requirements.txt
+│   │
+│   │── monitoring/  *(Même structure que device-management)*
+│   │── signing/  *(Même structure que device-management)*
+│   │── gateway/
+│   │── nginx/
+│   │   │── conf.d/
+│   │   │   ├── default.conf
+│   │   │── nginx.conf
+│   │── default.conf
+│   │── mongodb-deployment.yaml
+│   │── mongodb-service.yaml
+│   │── monitoring-deployment.yaml
+│   │── monitoring-service.yaml
+│   │── device-management-deployment.yaml
+│   │── device-management-service.yaml
+│   │── docker-compose.yml
+│   │── nginx-claim0-persistentvolumeclaim.yaml
+│   │── nginx-claim1-persistentvolumeclaim.yaml
+│   │── nginx-deployment.yaml
+│   │── nginx-pv.yaml
+│   │── postgres-data-persistentvolumeclaim.yaml
+│   │── postgres-deployment.yaml
+│   │── postgres-pv.yaml
+│   │── postgres-service.yaml
+│   │── rabbitmq-deployment.yaml
+│   │── rabbitmq-service.yaml
+│   │── signing-deployment.yaml
+│   │── signing-service.yaml
+│
+│── front-end/
+│   │── build/
+│   │── node_modules/
+│   │── public/
+│   │   ├── data/
+│   │   │   ├── weather_data_with_predictions.csv
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   ├── robots.txt
+│   │── src/
+│   │   │── assets/
+│   │   │── components/
+│   │   │   ├── Auth/
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── DashboardStats.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   ├── Devices/
+│   │   │   ├── Monitoring/
+│   │   │   ├── Weather/
+│   │   │   │   ├── WeatherCharts.jsx
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── styles.css
+│   │   │── context/
+│   │   │── css/
+│   │   │── pages/
+│   │   │   ├── DashboardPage.jsx
+│   │   │   ├── DevicesPage.jsx
+│   │   │   ├── GrafanaDashboard.js
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── MonitoringPage.jsx
+│   │   │   ├── RegisterPage.jsx
+│   │   │   ├── WeatherDashboard.jsx
+│   │   │── services/
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   ├── deviceService.js
+│   │   │   ├── monitoringService.js
+│   │   │   ├── weatherService.js
+│   │   │── App.js
+│   │   │── index.js
+│   │── .env
+│   │── .gitignore
+│   │── package-lock.json
+│   │── package.json
+│   │── README.md
+
+
 ```
 
 ## 🏗️ **Mise en place du projet**
